@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lj3-F9-ChY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Set Pin-->
+        <scene sceneID="Bzs-Pn-l84">
+            <objects>
+                <viewController storyboardIdentifier="SetupPinViewController" id="ldQ-rJ-KRU" customClass="SetupPinViewController" customModule="SoftPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A3B-Ue-8xE"/>
+                        <viewControllerLayoutGuide type="bottom" id="YIe-dX-fvU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2C3-WQ-0co">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Up your PinCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGL-vm-XxW">
+                                <rect key="frame" x="220" y="116" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Input" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6Y-sf-ECV">
+                                <rect key="frame" x="205" y="171" width="191" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="Q47-Ux-L06"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="firsttext:" destination="ldQ-rJ-KRU" eventType="editingChanged" id="XuR-Gn-try"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Second Input" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95I-GQ-1Xg">
+                                <rect key="frame" x="205" y="230" width="191" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="secondText:" destination="ldQ-rJ-KRU" eventType="editingChanged" id="PhQ-he-vhp"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rGL-vm-XxW" firstAttribute="top" secondItem="A3B-Ue-8xE" secondAttribute="bottom" constant="52" id="A2m-NT-RAb"/>
+                            <constraint firstItem="rGL-vm-XxW" firstAttribute="centerX" secondItem="M6Y-sf-ECV" secondAttribute="centerX" id="G8p-U6-5lT"/>
+                            <constraint firstItem="95I-GQ-1Xg" firstAttribute="leading" secondItem="M6Y-sf-ECV" secondAttribute="leading" id="T1R-Is-cgU"/>
+                            <constraint firstItem="rGL-vm-XxW" firstAttribute="centerX" secondItem="2C3-WQ-0co" secondAttribute="centerX" id="ejg-Pm-tUN"/>
+                            <constraint firstItem="95I-GQ-1Xg" firstAttribute="top" secondItem="M6Y-sf-ECV" secondAttribute="bottom" constant="29" id="etm-8P-oen"/>
+                            <constraint firstItem="95I-GQ-1Xg" firstAttribute="trailing" secondItem="M6Y-sf-ECV" secondAttribute="trailing" id="nkt-2P-Psf"/>
+                            <constraint firstItem="M6Y-sf-ECV" firstAttribute="top" secondItem="rGL-vm-XxW" secondAttribute="bottom" constant="34" id="oyW-0F-7NM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Set Pin" id="W74-IZ-VAx"/>
+                    <connections>
+                        <outlet property="Firstinputtext" destination="M6Y-sf-ECV" id="JfW-fR-2Gu"/>
+                        <outlet property="Secondinputtext" destination="95I-GQ-1Xg" id="dTd-om-c1l"/>
+                        <segue destination="iue-MZ-zJT" kind="presentation" identifier="enterPin" id="LZw-mo-xdM"/>
+                        <segue destination="cOy-aO-aZ0" kind="show" identifier="Test" id="26v-ff-Ger"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KO9-cm-hpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2924" y="-132"/>
+        </scene>
+        <!--EnterPinViewController-->
+        <scene sceneID="BGz-yD-Iv0">
+            <objects>
+                <viewController storyboardIdentifier="EnterPinViewController" title="EnterPinViewController" id="w91-C7-QSx" customClass="EnterPinViewController" customModule="SoftPin" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B4i-dH-SHB"/>
+                        <viewControllerLayoutGuide type="bottom" id="GBH-Md-oP2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5dp-WR-9g4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your Pin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-1f-89D">
+                                <rect key="frame" x="247" y="131" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Pins" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-LZ-fYe">
+                                <rect key="frame" x="218" y="201" width="164" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="0tP-mV-UHv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkPin:" destination="w91-C7-QSx" eventType="editingChanged" id="QS7-e0-e9W"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ci2-1f-89D" firstAttribute="centerX" secondItem="8tF-LZ-fYe" secondAttribute="centerX" id="9Mu-5M-zeJ"/>
+                            <constraint firstItem="8tF-LZ-fYe" firstAttribute="top" secondItem="ci2-1f-89D" secondAttribute="bottom" constant="49" id="JpM-Q7-vfY"/>
+                            <constraint firstItem="ci2-1f-89D" firstAttribute="centerX" secondItem="5dp-WR-9g4" secondAttribute="centerX" id="KcU-Pm-0DG"/>
+                            <constraint firstItem="ci2-1f-89D" firstAttribute="top" secondItem="B4i-dH-SHB" secondAttribute="bottom" constant="67" id="Mmq-KS-xzq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Confirm Ur Pin" id="abj-nO-ti8"/>
+                    <connections>
+                        <outlet property="enterPintext" destination="8tF-LZ-fYe" id="jfH-3E-7lc"/>
+                        <segue destination="cOy-aO-aZ0" kind="presentation" identifier="enrolled" id="csH-Bo-x8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Br2-Yv-qyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2924" y="636"/>
+        </scene>
+        <!--Enrolled View-->
+        <scene sceneID="1Ki-Ef-0d6">
+            <objects>
+                <viewController id="bL2-rS-HzB" customClass="EnrolledViewController" customModule="SoftPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TRx-dB-uaf"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Jl-Mx-G9s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Izs-Ss-9Hw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seB-Fb-DBo">
+                                <rect key="frame" x="221" y="258" width="158" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Open EntryView">
+                                    <color key="titleColor" red="0.83619397100000004" green="0.45983612070000002" blue="0.16934138739999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openEntryView:" destination="bL2-rS-HzB" eventType="touchUpInside" id="M0z-yX-VGg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5D3-zB-a8Q">
+                                <rect key="frame" x="236" y="305" width="128" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RQg-IN-atQ"/>
+                                    <constraint firstAttribute="width" constant="128" id="x1B-W5-BA6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Remove Pin">
+                                    <color key="titleColor" red="0.83619397100000004" green="0.45983612070000002" blue="0.16934138739999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="removePinButton:" destination="bL2-rS-HzB" eventType="touchUpInside" id="b7E-q8-yvj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="seB-Fb-DBo" firstAttribute="top" secondItem="TRx-dB-uaf" secondAttribute="bottom" constant="194" id="1UR-jg-ex0"/>
+                            <constraint firstItem="5D3-zB-a8Q" firstAttribute="top" secondItem="seB-Fb-DBo" secondAttribute="bottom" constant="8" symbolic="YES" id="2GX-18-f8f"/>
+                            <constraint firstItem="5D3-zB-a8Q" firstAttribute="centerX" secondItem="seB-Fb-DBo" secondAttribute="centerX" id="VSZ-RS-OWm"/>
+                            <constraint firstItem="5D3-zB-a8Q" firstAttribute="centerX" secondItem="Izs-Ss-9Hw" secondAttribute="centerX" id="mhM-0q-4VO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enrolled View" id="Cm9-mj-mRL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmf-2j-qko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4334" y="266"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="or6-ff-Qfq">
+            <objects>
+                <navigationController storyboardIdentifier="SetupPinNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Epu-qn-FAi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yd8-HW-quL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ldQ-rJ-KRU" kind="relationship" relationship="rootViewController" id="kv6-gZ-dRd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzC-Ct-OiF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2279" y="-132"/>
+        </scene>
+        <!--Entry View Controller-->
+        <scene sceneID="ugB-5y-Qy4">
+            <objects>
+                <viewController storyboardIdentifier="EntryViewController" id="lj3-F9-ChY" customClass="EntryViewController" customModule="SoftPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tei-7q-jWm"/>
+                        <viewControllerLayoutGuide type="bottom" id="uIT-Ih-evX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jd4-3V-rjd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFi-XJ-v5L">
+                                <rect key="frame" x="186" y="227" width="228" height="146"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="SoftPin Entry">
+                                    <color key="titleColor" red="0.83619397100000004" green="0.45983612070000002" blue="0.16934138739999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openSoftPin:" destination="lj3-F9-ChY" eventType="touchUpInside" id="cnf-cH-j4L"/>
+                                    <segue destination="iue-MZ-zJT" kind="show" identifier="openConfirmPin" id="cSp-Nf-0VN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gFi-XJ-v5L" firstAttribute="centerX" secondItem="Jd4-3V-rjd" secondAttribute="centerX" id="2Uz-Um-uUn"/>
+                            <constraint firstItem="gFi-XJ-v5L" firstAttribute="top" secondItem="Tei-7q-jWm" secondAttribute="bottom" constant="163" id="86B-q9-0bC"/>
+                            <constraint firstItem="gFi-XJ-v5L" firstAttribute="centerY" secondItem="Jd4-3V-rjd" secondAttribute="centerY" id="tcW-Zw-6iA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hgl-sd-11H"/>
+                    <connections>
+                        <segue destination="Epu-qn-FAi" kind="show" identifier="openSetPin" id="3z8-ox-hdQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaH-SM-PIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1535" y="290"/>
+        </scene>
+        <!--EnterPinViewController-->
+        <scene sceneID="Vsu-RE-heX">
+            <objects>
+                <navigationController storyboardIdentifier="EnterPinNavigationViewController" title="EnterPinViewController" automaticallyAdjustsScrollViewInsets="NO" id="iue-MZ-zJT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tz4-kn-V08">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w91-C7-QSx" kind="relationship" relationship="rootViewController" id="MuK-NA-5bw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lI0-5T-ocL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2279" y="636"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nFc-Xe-LbR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cOy-aO-aZ0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Prr-Dx-a9m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bL2-rS-HzB" kind="relationship" relationship="rootViewController" id="XNW-XP-BwF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1l-HW-oHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3648" y="266"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cSp-Nf-0VN"/>
+        <segue reference="csH-Bo-x8b"/>
+    </inferredMetricsTieBreakers>
+</document>
